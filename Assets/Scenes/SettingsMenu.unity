@@ -585,7 +585,6 @@ GameObject:
   m_Component:
   - component: {fileID: 415483828}
   - component: {fileID: 415483829}
-  - component: {fileID: 415483830}
   m_Layer: 0
   m_Name: SliderDistance
   m_TagString: Untagged
@@ -667,21 +666,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &415483830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415483827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a514a50f4f2a84935b76bf5eaa6c9787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HoloLens: {fileID: 0}
-  Hologram: {fileID: 0}
-  Distance_: 0
 --- !u!1 &450834407
 GameObject:
   m_ObjectHideFlags: 0

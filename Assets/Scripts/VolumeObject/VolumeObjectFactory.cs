@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using Microsoft.MixedReality.Toolkit.UI;
+using Microsoft.MixedReality.Toolkit.Input;
 
 namespace UnityVolumeRendering
 {
@@ -8,12 +10,15 @@ namespace UnityVolumeRendering
         public static VolumeRenderedObject CreateObject(VolumeDataset dataset)
         {
             GameObject outerObject = new GameObject("VolumeRenderedObject_" + dataset.datasetName);
+            outerObject.AddComponent<ConstraintManager>();
+            outerObject.AddComponent<ObjectManipulator>();
+            outerObject.AddComponent<NearInteractionGrabbable>();
             VolumeRenderedObject volObj = outerObject.AddComponent<VolumeRenderedObject>();
 
             GameObject meshContainer = GameObject.Instantiate((GameObject)Resources.Load("VolumeContainer"));
             meshContainer.transform.parent = outerObject.transform;
             meshContainer.transform.localScale = Vector3.one;
-            meshContainer.transform.localPosition = Vector3.zero;
+            meshContainer.transform.localPosition = new Vector3(0,1,0);
             meshContainer.transform.parent = outerObject.transform;
             outerObject.transform.localRotation = Quaternion.Euler(90.0f, 0.0f, 0.0f);
 
@@ -39,7 +44,7 @@ namespace UnityVolumeRendering
             meshRenderer.sharedMaterial.SetTexture("_TFTex", tfTexture);
 
             meshRenderer.sharedMaterial.EnableKeyword("MODE_DVR");
-            meshRenderer.sharedMaterial.DisableKeyword("MODE_MIP");
+            meshRenderer.sharedMaterial.DisableKeyword("MODE_MIP"); // tired to set this to enable to make it default render mode - didn't work
             meshRenderer.sharedMaterial.DisableKeyword("MODE_SURF");
 
             if(dataset.scaleX != 0.0f && dataset.scaleY != 0.0f && dataset.scaleZ != 0.0f)

@@ -25,7 +25,6 @@ Shader "VolumeRendering/DirectVolumeRenderingShader"
             #pragma multi_compile __ TF2D_ON
             #pragma multi_compile __ CROSS_SECTION_ON
             #pragma multi_compile __ LIGHTING_ON
-            #pragma multi_compile DEPTHWRITE_ON DEPTHWRITE_OFF
             #pragma multi_compile __ DVR_BACKWARD_ON
             #pragma multi_compile __ RAY_TERMINATE_ON
             #pragma multi_compile __ USE_MAIN_LIGHT

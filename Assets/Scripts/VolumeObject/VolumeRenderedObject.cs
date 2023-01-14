@@ -33,7 +33,7 @@ namespace UnityVolumeRendering
         [SerializeField, HideInInspector]
         private bool dvrBackward = false;
         [SerializeField, HideInInspector]
-        private bool cubicInterpolationEnabled = false;
+        private bool cubicInterpolationEnabled = true;
 
         private CrossSectionManager crossSectionManager;
 

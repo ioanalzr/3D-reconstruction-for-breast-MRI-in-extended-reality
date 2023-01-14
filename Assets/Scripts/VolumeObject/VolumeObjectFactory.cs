@@ -10,9 +10,6 @@ namespace UnityVolumeRendering
         public static VolumeRenderedObject CreateObject(VolumeDataset dataset)
         {
             GameObject outerObject = new GameObject("VolumeRenderedObject_" + dataset.datasetName);
-            outerObject.AddComponent<ConstraintManager>();
-            outerObject.AddComponent<ObjectManipulator>();
-            outerObject.AddComponent<NearInteractionGrabbable>();
             VolumeRenderedObject volObj = outerObject.AddComponent<VolumeRenderedObject>();
 
             GameObject meshContainer = GameObject.Instantiate((GameObject)Resources.Load("VolumeContainer"));
@@ -52,7 +49,9 @@ namespace UnityVolumeRendering
                 float maxScale = Mathf.Max(dataset.scaleX, dataset.scaleY, dataset.scaleZ);
                 volObj.transform.localScale = new Vector3(dataset.scaleX / maxScale, dataset.scaleY / maxScale, dataset.scaleZ / maxScale);
             }
-
+            meshContainer.AddComponent<ConstraintManager>();
+            meshContainer.AddComponent<ObjectManipulator>();
+            meshContainer.AddComponent<NearInteractionGrabbable>();
             return volObj;
         }
 

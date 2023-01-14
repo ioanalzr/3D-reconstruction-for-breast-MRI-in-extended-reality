@@ -1,8 +1,12 @@
+
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UnityVolumeRendering
 {
@@ -17,13 +21,19 @@ namespace UnityVolumeRendering
         {
             GUILayout.BeginVertical();
 
-            
+
             // Show dataset import buttons
 
 
             if (GUILayout.Button("Import DICOM dataset"))
             {
                 RuntimeFileBrowser.ShowOpenDirectoryDialog(OnOpenDICOMDatasetResult);
+            }
+
+
+            if (GUILayout.Button("Back to Main Menu"))
+            {
+                LoadScene("MainMenu");
             }
 
             // Show button for opening the dataset editor (for changing the visualisation)
@@ -37,7 +47,7 @@ namespace UnityVolumeRendering
             {
                 EditSliceGUI.ShowWindow(GameObject.FindObjectOfType<SlicingPlane>());
             }
-            
+
             if (GUILayout.Button("Show distance measure tool"))
             {
                 DistanceMeasureTool.ShowWindow();
@@ -45,9 +55,14 @@ namespace UnityVolumeRendering
 
             GUILayout.EndVertical();
         }
+        
 
+    public void LoadScene(string SceneToLoad)
+        {
+            SceneManager.LoadScene(SceneToLoad);
+        }
 
-        private void OnOpenDICOMDatasetResult(RuntimeFileBrowser.DialogResult result)
+       private void OnOpenDICOMDatasetResult(RuntimeFileBrowser.DialogResult result)
         {
             if (!result.cancelled)
             {
@@ -81,10 +96,11 @@ namespace UnityVolumeRendering
         private void DespawnAllDatasets()
         {
             VolumeRenderedObject[] volobjs = GameObject.FindObjectsOfType<VolumeRenderedObject>();
-            foreach(VolumeRenderedObject volobj in volobjs)
+            foreach (VolumeRenderedObject volobj in volobjs)
             {
                 GameObject.Destroy(volobj.gameObject);
             }
         }
     }
 }
+

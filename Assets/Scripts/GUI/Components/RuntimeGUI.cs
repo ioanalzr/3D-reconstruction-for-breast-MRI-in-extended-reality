@@ -1,8 +1,12 @@
+
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UnityVolumeRendering
 {
@@ -17,21 +21,19 @@ namespace UnityVolumeRendering
         {
             GUILayout.BeginVertical();
 
-            
-            // Show dataset import buttons
-            if(GUILayout.Button("Import RAW dataset"))
-            {
-                RuntimeFileBrowser.ShowOpenFileDialog(OnOpenRAWDatasetResult, "DataFiles");
-            }
 
-            if(GUILayout.Button("Import PARCHG dataset"))
-            {
-                RuntimeFileBrowser.ShowOpenFileDialog(OnOpenPARDatasetResult, "DataFiles");
-            }
+            // Show dataset import buttons
+
 
             if (GUILayout.Button("Import DICOM dataset"))
             {
                 RuntimeFileBrowser.ShowOpenDirectoryDialog(OnOpenDICOMDatasetResult);
+            }
+
+
+            if (GUILayout.Button("Back to Main Menu"))
+            {
+                LoadScene("MainMenu");
             }
 
             // Show button for opening the dataset editor (for changing the visualisation)
@@ -45,7 +47,7 @@ namespace UnityVolumeRendering
             {
                 EditSliceGUI.ShowWindow(GameObject.FindObjectOfType<SlicingPlane>());
             }
-            
+
             if (GUILayout.Button("Show distance measure tool"))
             {
                 DistanceMeasureTool.ShowWindow();
@@ -53,52 +55,14 @@ namespace UnityVolumeRendering
 
             GUILayout.EndVertical();
         }
-
-        private void OnOpenPARDatasetResult(RuntimeFileBrowser.DialogResult result)
-        {
-            if (!result.cancelled)
-            {
-                DespawnAllDatasets();
-                string filePath = result.path;
-                IImageFileImporter parimporter = ImporterFactory.CreateImageFileImporter(ImageFileFormat.VASP);
-                VolumeDataset dataset = parimporter.Import(filePath);
-                if (dataset != null)
-                {
-                        VolumeObjectFactory.CreateObject(dataset);
-                }
-            }
-        }
         
-        private void OnOpenRAWDatasetResult(RuntimeFileBrowser.DialogResult result)
+
+    public void LoadScene(string SceneToLoad)
         {
-            if(!result.cancelled)
-            {
-
-                // We'll only allow one dataset at a time in the runtime GUI (for simplicity)
-                DespawnAllDatasets();
-
-                // Did the user try to import an .ini-file? Open the corresponding .raw file instead
-                string filePath = result.path;
-                if (System.IO.Path.GetExtension(filePath) == ".ini")
-                    filePath = filePath.Substring(0, filePath.Length - 4);
-
-                // Parse .ini file
-                DatasetIniData initData = DatasetIniReader.ParseIniFile(filePath + ".ini");
-                if(initData != null)
-                {
-                    // Import the dataset
-                    RawDatasetImporter importer = new RawDatasetImporter(filePath, initData.dimX, initData.dimY, initData.dimZ, initData.format, initData.endianness, initData.bytesToSkip);
-                    VolumeDataset dataset = importer.Import();
-                    // Spawn the object
-                    if (dataset != null)
-                    {
-                        VolumeObjectFactory.CreateObject(dataset);
-                    }
-                }
-            }
+            SceneManager.LoadScene(SceneToLoad);
         }
 
-        private void OnOpenDICOMDatasetResult(RuntimeFileBrowser.DialogResult result)
+       private void OnOpenDICOMDatasetResult(RuntimeFileBrowser.DialogResult result)
         {
             if (!result.cancelled)
             {
@@ -132,10 +96,11 @@ namespace UnityVolumeRendering
         private void DespawnAllDatasets()
         {
             VolumeRenderedObject[] volobjs = GameObject.FindObjectsOfType<VolumeRenderedObject>();
-            foreach(VolumeRenderedObject volobj in volobjs)
+            foreach (VolumeRenderedObject volobj in volobjs)
             {
                 GameObject.Destroy(volobj.gameObject);
             }
         }
     }
 }
+

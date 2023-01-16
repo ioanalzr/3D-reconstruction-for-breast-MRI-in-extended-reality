@@ -69,12 +69,12 @@ namespace UnityVolumeRendering
             if (hist2DTex == null)
                 hist2DTex = HistogramTextureGenerator.Generate2DHistogramTexture(volRendObject.dataset);
 
-            TransferFunction2D tf2d = volRendObject.transferFunction2D;
+            z tf2d = volRendObject.transferFunction2D;
 
             if (tf2d.boxes.Count != tfAreas.Count)
             {
                 tfAreas.Clear();
-                foreach (TransferFunction2D.TF2DBox tfBox in tf2d.boxes)
+                foreach (z.TF2DBox tfBox in tf2d.boxes)
                 {
                     ResizableArea area = new ResizableArea();
                     tfAreas.Add(area);
@@ -94,7 +94,7 @@ namespace UnityVolumeRendering
             for (int i = 0; i < tf2d.boxes.Count; i++)
             {
                 int iBox = (i + selectedBoxIndex + 1) % tf2d.boxes.Count;
-                TransferFunction2D.TF2DBox box = tf2d.boxes[iBox];
+                z.TF2DBox box = tf2d.boxes[iBox];
                 ResizableArea tfArea = tfAreas[iBox];
 
                 if (isMovingBox && selectedBoxIndex == iBox)
@@ -148,7 +148,7 @@ namespace UnityVolumeRendering
             if (selectedBoxIndex != -1)
             {
                 EditorGUI.BeginChangeCheck();
-                TransferFunction2D.TF2DBox box = tf2d.boxes[selectedBoxIndex];
+                z.TF2DBox box = tf2d.boxes[selectedBoxIndex];
                 box.colour = EditorGUI.ColorField(new Rect(startX + 250.0f, startY + 10, 100.0f, 20.0f), box.colour);
                 box.minAlpha = EditorGUI.Slider(new Rect(startX + 250.0f, startY + 30, 200.0f, 20.0f), "min alpha", box.minAlpha, 0.0f, 1.0f);
                 box.alpha = EditorGUI.Slider(new Rect(startX + 250.0f, startY + 60, 200.0f, 20.0f), "max alpha", box.alpha, 0.0f, 1.0f);
@@ -189,7 +189,7 @@ namespace UnityVolumeRendering
                 string filepath = EditorUtility.OpenFilePanel("Save transfer function", "", "tf2d");
                 if(filepath != "")
                 {
-                    TransferFunction2D newTF = TransferFunctionDatabase.LoadTransferFunction2D(filepath);
+                    z newTF = TransferFunctionDatabase.LoadTransferFunction2D(filepath);
                     if(newTF != null)
                     {
                         volRendObject.transferFunction2D = tf2d = newTF;
@@ -214,7 +214,7 @@ namespace UnityVolumeRendering
             // TODO: regenerate on add/remove/modify (and do it async)
             if (needsRegenTexture)
             {
-                TransferFunction2D tf2d = volRendObject.transferFunction2D;
+                z tf2d = volRendObject.transferFunction2D;
                 tf2d.GenerateTexture();
                 needsRegenTexture = false;
             }

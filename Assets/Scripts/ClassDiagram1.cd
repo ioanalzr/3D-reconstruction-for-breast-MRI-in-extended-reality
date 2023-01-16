@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="openDicom.DicomContext" Collapsed="true">
+    <Position X="66" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAABBABAAAAAAAAgAAEAIAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DicomContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.DicomException" Collapsed="true">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAAAAAgAAAEAAIAAAACAAAEAIAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DicomException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.DataStructure.DataSet.DataElement" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="69.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAkAAQABAAAAAAAAAREACAAQAAgAIAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DataStructure\DataSet\DataElement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="openDicom.DataStructure.DataSet.DataSet" Collapsed="true">
+    <Position X="1.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAAAAIAAAACAAQAAAAAAAAAAAAAAAAAIBQAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DataStructure\DataSet\DataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.DataStructure.DataSet.NestedDataSet" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DataStructure\DataSet\NestedDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.DataStructure.DataSet.Sequence" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgJAAAAAAAAEABCADAAQAAQAIAAEAAAAAAAAAIhAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DataStructure\DataSet\Sequence.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="openDicom.DataStructure.Tag" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="71.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAAAAEgABAAGAAQMhAgAAAAIAAAEAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DataStructure\Tag.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="openDicom.DataStructure.Value" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="71.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAJAAAQCAAAQQBQIDAAAgAQAAA5EBAAAQBYAAIBAEAg=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DataStructure\Value.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="openDicom.DataStructure.ValueLength" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="64.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAQAAAEBEAAAAAAAAREAAAAAAAgAIAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DataStructure\ValueLength.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="openDicom.DataStructure.ValueRepresentation" Collapsed="true">
+    <Position X="32.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgAgCAAAAAwAAAEBgAAgAQAAAQscBAAAAEAQIABAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DataStructure\VR.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="openDicom.Encoding.ApplicationEntity" Collapsed="true">
+    <Position X="28" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\AE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.AgeString" Collapsed="true">
+    <Position X="37" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\AS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.AttributeTag" Collapsed="true">
+    <Position X="41.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\AT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.ByteConvert" Collapsed="true">
+    <Position X="66" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAABEAAAAAAAAAAEAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\ByteConvert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.CharacterRepertoire" Collapsed="true">
+    <Position X="67.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAIAAAgAAACYAECAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\CharacterRepertoire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.CodeString" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\CS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.Date" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\DA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.DecimalString" Collapsed="true">
+    <Position X="21.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\DS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.DateTime" Collapsed="true">
+    <Position X="30.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\DT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.EncodingException" Collapsed="true">
+    <Position X="5.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\EncodingException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.FloatingPointDouble" Collapsed="true">
+    <Position X="43.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\FD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.FloatingPointSingle" Collapsed="true">
+    <Position X="50.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\FL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.IntegerString" Collapsed="true">
+    <Position X="57.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\IS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.LongString" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\LO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.LongText" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\LT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.OtherByteString" Collapsed="true">
+    <Position X="23.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\OB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.OtherFloatString" Collapsed="true">
+    <Position X="32.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\OF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.OtherWordString" Collapsed="true">
+    <Position X="39.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\OW.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.PersonName" Collapsed="true">
+    <Position X="46" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\PN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.ShortName" Collapsed="true">
+    <Position X="52.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\SH.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.SignedLong" Collapsed="true">
+    <Position X="59.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\SL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.SequenceOfItems" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\SQ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.SignedShort" Collapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\SS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.ShortText" Collapsed="true">
+    <Position X="25.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\ST.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.Time" Collapsed="true">
+    <Position X="34.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\TM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.TransferSyntax" Collapsed="true">
+    <Position X="64.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQgCQAAIAEAAMoBABKAAAAQAAAAAAAAAACIAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\TransferSyntax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.UniqueIdentifier" Collapsed="true">
+    <Position X="48.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\UI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.UnsignedLong" Collapsed="true">
+    <Position X="55" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\UL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.Unknown" Collapsed="true">
+    <Position X="61.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\UN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.UnsignedShort" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\US.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.UnlimitedText" Collapsed="true">
+    <Position X="19" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\UT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.Type.Age" Collapsed="true">
+    <Position X="64.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAgAAAAAFAAAAACAAAAQgAAAAgCAAAEQAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\Type\Age.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Encoding.Type.PersonName" Collapsed="true">
+    <Position X="67.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABAAAgIAAIBEKCCUAIAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\Type\PersonName.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.File.AcrNemaFile" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAQAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAoABAAI=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\File\AcrNemaFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.File.DicomFile" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAIAAAACAAAAAABAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\File\DicomFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.File.FileMetaInformation" Collapsed="true">
+    <Position X="2.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAQAAAAEAAAAAAAIBAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\File\FileMetaInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.File.XmlFile" Collapsed="true">
+    <Position X="67.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAQAIACAACAAAAgAAgBAAAABEACAABAAAIAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\File\XmlFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Image.PixelData" Collapsed="true">
+    <Position X="69.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAQAAAIAEEQOgCAAjAAEMAIBRBABAICAAQAIlAAAI=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Image\PixelData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="openDicom.Registry.DataElementDictionary" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="71.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AANAAAwAAAECIABASAAAAAQgAEIAIAAAAAAAAIBRARA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Registry\DataElementDictionary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="openDicom.Registry.DataElementDictionaryEntry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="64.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAgAAQAoAAACAAAAAREAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Registry\DataElementDictionaryEntry.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="openDicom.Registry.Uid" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="66" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAGEAQEgAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Registry\Uid.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="openDicom.Registry.UidDictionary" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="67.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AANAAAwAAAECIABASAAAAAQgAEIAIAAAAAAAAIBRARA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Registry\UidDictionary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="openDicom.Registry.UidDictionaryEntry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="69.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAQAgBAAAAQAAAAFAAAABQAAAAAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Registry\UidDictionaryEntry.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="openDicom.Registry.ValueMultiplicity" Collapsed="true">
+    <Position X="66" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAgAwAAAEgAgAAAAAgARAAIAAAAAgAAABAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Registry\VM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.ColourPickerPopup" Collapsed="true">
+    <Position X="48" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABAACACWQAAAAAEAAAAAAEAARQABgQAgACAAABAQEI=</HashCode>
+      <FileName>Assets\Scripts\GUI\Components\ColourPickerPopup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.DistanceMeasureTool" Collapsed="true">
+    <Position X="53.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAACAACSAAAAAAAAgAAAAIAABAAAQQAACAAABAAEA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Components\DistanceMeasureTool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.EditSliceGUI" Collapsed="true">
+    <Position X="55" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAACSAAAgAAAACAIAAAAABAAAQAAACAAABAAEA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Components\EditSliceGUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.EditVolumeGUI" Collapsed="true">
+    <Position X="46.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAACSAAAAAAAAiAAAAAAABAAAQQAACAQABAAEA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Components\EditVolumeGUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.RuntimeFileBrowser" Collapsed="true">
+    <Position X="53.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAACA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Components\RuntimeFileBrowserComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.RuntimeGUI" Collapsed="true">
+    <Position X="55" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAACAQAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Components\RuntimeGUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.RuntimeTransferFunctionEditor" Collapsed="true">
+    <Position X="46.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>VBQAACAADQABAAAAAAAAAAAAEABAAAQAAACAAABACEA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Components\RuntimeTransferFunctionEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.WindowGUID" Collapsed="true">
+    <Position X="53.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Components\WindowGUID.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.GUIUtils" Collapsed="true">
+    <Position X="48" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\IMGUI\ColourPicker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.TransferFunctionEditor" Collapsed="true">
+    <Position X="55" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBgQAAAABACAAQQAAACIAIAAEAAAAAQAAAAACAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\GUI\IMGUI\TransferFunctionEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.DatasetImporterUtility" Collapsed="true">
+    <Position X="55" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\DatasetImporterUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.NiftiImporter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="46.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageFileImporter\Nifti.NET\NiftiImporter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UnityVolumeRendering.ParDatasetImporter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="49.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAIAASQUKAEgsIAIEEAIQAIAAGkBBSFAAAAACQBA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageFileImporter\VASP\ParDatasetImporter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UnityVolumeRendering.DensityHelper" Collapsed="true">
+    <Position X="49.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageSequenceImporter\ImageSequenceImporter\DensityHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.ImageSequenceImporter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAEAAAAAAAEAAAEAIAAAgAAAAAAAAAAAEgAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageSequenceImporter\ImageSequenceImporter\ImageSequenceImporter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UnityVolumeRendering.DICOMImporter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAAACAAAQAAEAAAAAgAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageSequenceImporter\OpenDICOM\DICOMImporter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UnityVolumeRendering.ImporterFactory" Collapsed="true">
+    <Position X="53.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAgAAAAACAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImporterFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.DatasetIniData" Collapsed="true">
+    <Position X="46.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAsAAAAAAAAAAACAAAAAAAAAAAAwAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\Ini\DatasetIniReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.DatasetIniReader" Collapsed="true">
+    <Position X="48" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\Ini\DatasetIniReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.RawDatasetImporter" Collapsed="true">
+    <Position X="51.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAsAAAAAAAIAAEAAAAAAAAEEAAAgAAAAAAAYA=</HashCode>
+      <FileName>Assets\Scripts\Importing\RawImporter\RawDatasetImporter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.CameraController" Collapsed="true">
+    <Position X="46.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAACAAAAAAAAAAAAAAABAAAAAAAIAoAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SampleScene\CameraController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.TransferFunction" Collapsed="true">
+    <Position X="49.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAASAIABAAAAABAAAAEAAQAAAgAAgAIAAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\TransferFunction\TransferFunction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.z" Collapsed="true">
+    <Position X="38.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAASAIAAAAAAAAAAAAMAAAAAAgAAgAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\TransferFunction\TransferFunction2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.TransferFunctionDatabase" Collapsed="true">
+    <Position X="53.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAQAAAABAAAAAQAQAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\TransferFunction\TransferFunctionDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.HistogramTextureGenerator" Collapsed="true">
+    <Position X="49.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAABAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Utils\HistogramTextureGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.NoiseTextureGenerator" Collapsed="true">
+    <Position X="48" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utils\NoiseTextureGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.VolumeDataset" Collapsed="true">
+    <Position X="46.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAgASCAsKAAAAAIAAAAAAACAgIAAEBAAAAUAAIQAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeData\VolumeDataset.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.CrossSectionManager" Collapsed="true">
+    <Position X="49.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAEAAAAAAACCAAAAAiQAAAAAQAAAAABAAAEA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\CrossSectionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.CrossSectionPlane" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAEAAAgYAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\CrossSectionPlane.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UnityVolumeRendering.CutoutBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="53.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAEAAAgYAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\CutoutBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UnityVolumeRendering.MaterialFactory" Collapsed="true">
+    <Position X="55" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\MaterialFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.SlicingPlane" Collapsed="true">
+    <Position X="48" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\SlicingPlane.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.VolumeObjectFactory" Collapsed="true">
+    <Position X="48" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAACAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\VolumeObjectFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.VolumeRenderedObject" Collapsed="true">
+    <Position X="51.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAARAQQAwDBACACWAAhEGAEgAQQgCIiAgAAAgBAwAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\VolumeRenderedObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVolumeRendering.VolumeRaycaster" Collapsed="true">
+    <Position X="49.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeQueries\VolumeRaycaster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="UnityVolumeRendering.TFColourControlPoint" Collapsed="true">
+    <Position X="51.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\TransferFunction\TFControlPoints.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="UnityVolumeRendering.TFAlphaControlPoint" Collapsed="true">
+    <Position X="49.75" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\TransferFunction\TFControlPoints.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="UnityVolumeRendering.CrossSectionData" Collapsed="true">
+    <Position X="46.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\CrossSectionManager.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="UnityVolumeRendering.RaycastHit" Collapsed="true">
+    <Position X="48" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeQueries\VolumeRaycaster.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="openDicom.DataStructure.IDicomStreamMember" Collapsed="true">
+    <Position X="66" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\DataStructure\IDicomStreamMember.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="openDicom.Registry.IDicomDictionary" Collapsed="true">
+    <Position X="64.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Registry\IDicomDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UnityVolumeRendering.IImageFileImporter" Collapsed="true">
+    <Position X="48" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageFileImporter\Interface\IImageFileImporter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UnityVolumeRendering.IImageSequenceFile" Collapsed="true">
+    <Position X="49.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageSequenceImporter\Interface\IImageSequenceImporter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UnityVolumeRendering.IImageSequenceSeries" Collapsed="true">
+    <Position X="53.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageSequenceImporter\Interface\IImageSequenceImporter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UnityVolumeRendering.IImageSequenceImporter" Collapsed="true">
+    <Position X="51.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageSequenceImporter\Interface\IImageSequenceImporter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UnityVolumeRendering.CrossSectionObject" Collapsed="true">
+    <Position X="46.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\CrossSectionObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="openDicom.Encoding.Type.AgeContext" Collapsed="true">
+    <Position X="64.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAEQAAAAAAAAAE=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Encoding\Type\Age.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="openDicom.Registry.DictionaryFileFormat" Collapsed="true">
+    <Position X="66" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAQgAAAA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Registry\IDicomDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="openDicom.Registry.UidType" Collapsed="true">
+    <Position X="67.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAgBAAAAIAAAgAABQAAEAAAoAAAIBA=</HashCode>
+      <FileName>Assets\3rdparty\openDicom\Registry\UidDictionaryEntry.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.DatasetType" Collapsed="true">
+    <Position X="51.5" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACQgAAAAAQAAAAAAAAAAAAEAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Importing\DatasetImporterUtility.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.ImageFileFormat" Collapsed="true">
+    <Position X="46.25" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageFileImporter\Interface\IImageFileImporter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.DensitySource" Collapsed="true">
+    <Position X="53.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageSequenceImporter\ImageSequenceImporter\DensitySource.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.ImageSequenceFormat" Collapsed="true">
+    <Position X="48" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\ImageSequenceImporter\Interface\IImageSequenceImporter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.DataContentFormat" Collapsed="true">
+    <Position X="49.75" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAIIAAAAAAEEAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\RawImporter\RawDatasetImporter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.Endianness" Collapsed="true">
+    <Position X="55" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Importing\RawImporter\RawDatasetImporter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.LightSource" Collapsed="true">
+    <Position X="49.75" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Lighting\LightSource.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.CrossSectionType" Collapsed="true">
+    <Position X="46.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEABAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\CrossSectionManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.CutoutType" Collapsed="true">
+    <Position X="48" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\CutoutBox.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.RenderMode" Collapsed="true">
+    <Position X="51.5" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\RenderMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UnityVolumeRendering.TFRenderMode" Collapsed="true">
+    <Position X="53.25" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VolumeObject\RenderMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

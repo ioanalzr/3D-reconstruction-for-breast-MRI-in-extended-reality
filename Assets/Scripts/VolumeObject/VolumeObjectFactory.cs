@@ -35,7 +35,7 @@ namespace UnityVolumeRendering
             Texture2D tfTexture = tf.GetTexture();
             volObj.transferFunction = tf;
 
-            TransferFunction2D tf2D = TransferFunctionDatabase.CreateTransferFunction2D();
+            z tf2D = TransferFunctionDatabase.CreateTransferFunction2D();
             volObj.transferFunction2D = tf2D;
 
             meshRenderer.sharedMaterial.SetTexture("_DataTex", dataset.GetDataTexture());

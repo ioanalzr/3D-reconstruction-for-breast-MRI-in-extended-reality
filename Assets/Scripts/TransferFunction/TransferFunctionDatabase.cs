@@ -20,7 +20,7 @@ namespace UnityVolumeRendering
         private struct TF2DSerialisationData
         {
             public int version;
-            public List<TransferFunction2D.TF2DBox> boxes;
+            public List<z.TF2DBox> boxes;
 
             public const int VERSION_ID = 1;
         }
@@ -43,9 +43,9 @@ namespace UnityVolumeRendering
             return tf;
         }
 
-        public static TransferFunction2D CreateTransferFunction2D()
+        public static z CreateTransferFunction2D()
         {
-            TransferFunction2D tf2D = new TransferFunction2D();
+            z tf2D = new z();
             tf2D.AddBox(0.05f, 0.1f, 0.8f, 0.7f, Color.white, 0.4f);
             return tf2D;
         }
@@ -68,7 +68,7 @@ namespace UnityVolumeRendering
             return tf;
         }
 
-        public static TransferFunction2D LoadTransferFunction2D(string filepath)
+        public static z LoadTransferFunction2D(string filepath)
         {
             if(!File.Exists(filepath))
             {
@@ -77,7 +77,7 @@ namespace UnityVolumeRendering
             }
             string jsonstring = File.ReadAllText(filepath);
             TF2DSerialisationData data = JsonUtility.FromJson<TF2DSerialisationData>(jsonstring);
-            TransferFunction2D tf = new TransferFunction2D();
+            z tf = new z();
             tf.boxes = data.boxes;
             return tf;
         }
@@ -92,11 +92,11 @@ namespace UnityVolumeRendering
             File.WriteAllText(filepath, jsonstring);
         }
 
-        public static void SaveTransferFunction2D(TransferFunction2D tf2d, string filepath)
+        public static void SaveTransferFunction2D(z tf2d, string filepath)
         {
             TF2DSerialisationData data = new TF2DSerialisationData();
             data.version = TF2DSerialisationData.VERSION_ID;
-            data.boxes = new List<TransferFunction2D.TF2DBox>(tf2d.boxes);
+            data.boxes = new List<z.TF2DBox>(tf2d.boxes);
             string jsonstring = JsonUtility.ToJson(data);
             File.WriteAllText(filepath, jsonstring);
         }

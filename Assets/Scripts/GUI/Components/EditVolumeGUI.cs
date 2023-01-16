@@ -122,7 +122,7 @@ namespace UnityVolumeRendering
                 }
                 if (extension == ".tf2d")
                 {
-                    TransferFunction2D tf = TransferFunctionDatabase.LoadTransferFunction2D(result.path);
+                    z tf = TransferFunctionDatabase.LoadTransferFunction2D(result.path);
                     if (tf != null)
                     {
                         targetObject.transferFunction2D = tf;

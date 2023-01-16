@@ -54,13 +54,6 @@ namespace UnityVolumeRendering
                 RuntimeFileBrowser.ShowOpenDirectoryDialog(LoadOnOpenDICOMDatasetResult);
             }
 
-
-            if (GUILayout.Button("Back to Main Menu"))
-            {
-                DespawnAllDatasets();
-                LoadScene("MainMenu");
-            }
-
             // Show button for opening the dataset editor (for changing the visualisation)
             if (GameObject.FindObjectOfType<VolumeRenderedObject>() != null && GUILayout.Button("Edit imported dataset"))
             {
@@ -74,7 +67,17 @@ namespace UnityVolumeRendering
             }
             if (GUILayout.Button("Save Model"))
                 Save();
+            if (GUILayout.Button("Delete Object"))
+            {
+                DespawnAllDatasets();
+            }
 
+
+            if (GUILayout.Button("Back to Main Menu"))
+            {
+                DespawnAllDatasets();
+                LoadScene("MainMenu");
+            }
             GUILayout.EndVertical();
         }
 

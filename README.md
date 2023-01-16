@@ -22,6 +22,11 @@ The Mixed Reality Toolkit might have to be installed and imported to the project
 
 The WSAT Test might have to be deleted from Edit>Project Settings>Player.
 
+In case the master branch presents additional errors, branch Ioana should have a final functional version.
+
+
+
+
 MIT License
 
 Copyright (c) [year] [fullname]

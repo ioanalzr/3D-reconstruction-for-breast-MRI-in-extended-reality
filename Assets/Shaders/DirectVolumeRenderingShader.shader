@@ -1,4 +1,4 @@
-﻿Shader "VolumeRendering/DirectVolumeRenderingShader"
+Shader "VolumeRendering/DirectVolumeRenderingShader"
 {
     Properties
     {
@@ -25,7 +25,6 @@
             #pragma multi_compile __ TF2D_ON
             #pragma multi_compile __ CROSS_SECTION_ON
             #pragma multi_compile __ LIGHTING_ON
-            #pragma multi_compile DEPTHWRITE_ON DEPTHWRITE_OFF
             #pragma multi_compile __ DVR_BACKWARD_ON
             #pragma multi_compile __ RAY_TERMINATE_ON
             #pragma multi_compile __ USE_MAIN_LIGHT
@@ -41,6 +40,7 @@
 
             struct vert_in
             {
+                UNITY_VERTEX_INPUT_INSTANCE_ID
                 float4 vertex : POSITION;
                 float4 normal : NORMAL;
                 float2 uv : TEXCOORD0;
@@ -48,6 +48,7 @@
 
             struct frag_in
             {
+                UNITY_VERTEX_OUTPUT_STEREO
                 float4 vertex : SV_POSITION;
                 float2 uv : TEXCOORD0;
                 float3 vertexLocal : TEXCOORD1;
@@ -254,14 +255,6 @@
                         clipped = planeSpacePos.x >= -0.5f && planeSpacePos.x <= 0.5f && planeSpacePos.y >= -0.5f && planeSpacePos.y <= 0.5f && planeSpacePos.z >= -0.5f && planeSpacePos.z <= 0.5f;
                 }
                 return clipped;
-                /*
-    #if CUTOUT_PLANE
-                return planeSpacePos.z > 0.0f;
-    #elif CUTOUT_BOX_INCL
-                return !(planeSpacePos.x >= -0.5f && planeSpacePos.x <= 0.5f && planeSpacePos.y >= -0.5f && planeSpacePos.y <= 0.5f && planeSpacePos.z >= -0.5f && planeSpacePos.z <= 0.5f);
-    #elif CUTOUT_BOX_EXCL
-                return planeSpacePos.x >= -0.5f && planeSpacePos.x <= 0.5f && planeSpacePos.y >= -0.5f && planeSpacePos.y <= 0.5f && planeSpacePos.z >= -0.5f && planeSpacePos.z <= 0.5f;
-    #endif*/
 #else
                 return false;
 #endif
@@ -270,6 +263,8 @@
             frag_in vert_main (vert_in v)
             {
                 frag_in o;
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = v.uv;
                 o.vertexLocal = v.vertex;
@@ -461,6 +456,8 @@
 
             frag_out frag(frag_in i)
             {
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+
 #if MODE_DVR
                 return frag_dvr(i);
 #elif MODE_MIP

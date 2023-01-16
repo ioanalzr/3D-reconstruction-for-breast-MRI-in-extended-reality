@@ -17,7 +17,8 @@ The livestreaming presents lagging at time.
 The app is intended to be used as a standalone app which communicates with the Hololens, however this is still in development. https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/use-pc-resources
 
 Possible Errors at build:
-The Mixed Reality Toolkit might have to be installed and imported to the project again from the Mixed Reality Feature Tool.
+
+The Mixed Reality Toolkit might have to be installed and imported to the project again from the Mixed Reality Feature Tool.https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool
 
 The WSAT Test might have to be deleted from Edit>Project Settings>Player.
 

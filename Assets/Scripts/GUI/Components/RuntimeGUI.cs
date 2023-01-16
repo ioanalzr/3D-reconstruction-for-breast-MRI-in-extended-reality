@@ -1,37 +1,64 @@
+
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+//using UnityEditor.U2D.Animation;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.IO;
+using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.MixedReality.OpenXR.RemotingSample;
 namespace UnityVolumeRendering
 {
+
+
     /// <summary>
     /// This is a basic runtime GUI, that can be used during play mode.
-    /// You can import datasets, and edit them.
-    /// Add this component to an empty GameObject in your scene (it's already in the test scene) and click play to see the GUI.
+    /// You can import a DICOM dataset, and edit it.
     /// </summary>
     public class RuntimeGUI : MonoBehaviour
     {
+        public string savedPath; // when a folder will be selected for rendering, the path will be saved and modified for saving
+        AppRemoting newobj = new AppRemoting();
         private void OnGUI()
         {
             GUILayout.BeginVertical();
 
-            
-            // Show dataset import buttons
-            if(GUILayout.Button("Import RAW dataset"))
-            {
-                RuntimeFileBrowser.ShowOpenFileDialog(OnOpenRAWDatasetResult, "DataFiles");
-            }
 
-            if(GUILayout.Button("Import PARCHG dataset"))
+            // for using PC resources to power the app with Holographic Remoting remote app
+            /*
+            if (GUILayout.Button("Connect to HoloLens"))
             {
-                RuntimeFileBrowser.ShowOpenFileDialog(OnOpenPARDatasetResult, "DataFiles");
+                newobj.ConnectToRemote();
             }
-
-            if (GUILayout.Button("Import DICOM dataset"))
+            */
+            if (GUILayout.Button("Start New Model"))
             {
                 RuntimeFileBrowser.ShowOpenDirectoryDialog(OnOpenDICOMDatasetResult);
+
+            }
+            if (GUILayout.Button("Load existing Model"))
+            {
+                RuntimeFileBrowser.ShowOpenDirectoryDialog(LoadOnOpenDICOMDatasetResult);
+            }
+
+
+            if (GUILayout.Button("Back to Main Menu"))
+            {
+                DespawnAllDatasets();
+                LoadScene("MainMenu");
             }
 
             // Show button for opening the dataset editor (for changing the visualisation)
@@ -40,68 +67,61 @@ namespace UnityVolumeRendering
                 EditVolumeGUI.ShowWindow(GameObject.FindObjectOfType<VolumeRenderedObject>());
             }
 
-            // Show button for opening the slicing plane editor (for changing the orientation and position)
-            if (GameObject.FindObjectOfType<SlicingPlane>() != null && GUILayout.Button("Edit slicing plane"))
-            {
-                EditSliceGUI.ShowWindow(GameObject.FindObjectOfType<SlicingPlane>());
-            }
-            
+
             if (GUILayout.Button("Show distance measure tool"))
             {
                 DistanceMeasureTool.ShowWindow();
             }
+            if (GUILayout.Button("Save Model"))
+                Save();
 
             GUILayout.EndVertical();
         }
 
-        private void OnOpenPARDatasetResult(RuntimeFileBrowser.DialogResult result)
+
+
+
+        public void Save()
         {
-            if (!result.cancelled)
+
+
+            GameObject objectToSave = new GameObject();
+            GameObject[] objects =
+            UnityEngine.Object.FindObjectsOfType<GameObject>(); // object that you want to save (get object with 3D model Tag
+            foreach (GameObject go in objects)
             {
-                DespawnAllDatasets();
-                string filePath = result.path;
-                IImageFileImporter parimporter = ImporterFactory.CreateImageFileImporter(ImageFileFormat.VASP);
-                VolumeDataset dataset = parimporter.Import(filePath);
-                if (dataset != null)
+                if (go.tag == "3Dmodel" && go.activeInHierarchy)
                 {
-                        VolumeObjectFactory.CreateObject(dataset);
+                    objectToSave = go;
+                    break;
                 }
+
             }
+
+
+            savedData data = new savedData();
+            data.position = objectToSave.transform.localPosition;
+            data.rotation = objectToSave.transform.localRotation;
+            data.scale = objectToSave.transform.localScale;
+
+
+            string finalPath = Application.persistentDataPath + @"\" + Path.GetFileName(savedPath) + ".txt";
+            string serData = JsonUtility.ToJson(data);
+            File.WriteAllText(finalPath, serData);
+            //Debug.Log(finalPath);
         }
-        
-        private void OnOpenRAWDatasetResult(RuntimeFileBrowser.DialogResult result)
+
+
+        public void LoadScene(string SceneToLoad)
         {
-            if(!result.cancelled)
-            {
-
-                // We'll only allow one dataset at a time in the runtime GUI (for simplicity)
-                DespawnAllDatasets();
-
-                // Did the user try to import an .ini-file? Open the corresponding .raw file instead
-                string filePath = result.path;
-                if (System.IO.Path.GetExtension(filePath) == ".ini")
-                    filePath = filePath.Substring(0, filePath.Length - 4);
-
-                // Parse .ini file
-                DatasetIniData initData = DatasetIniReader.ParseIniFile(filePath + ".ini");
-                if(initData != null)
-                {
-                    // Import the dataset
-                    RawDatasetImporter importer = new RawDatasetImporter(filePath, initData.dimX, initData.dimY, initData.dimZ, initData.format, initData.endianness, initData.bytesToSkip);
-                    VolumeDataset dataset = importer.Import();
-                    // Spawn the object
-                    if (dataset != null)
-                    {
-                        VolumeObjectFactory.CreateObject(dataset);
-                    }
-                }
-            }
+            SceneManager.LoadScene(SceneToLoad);
         }
 
         private void OnOpenDICOMDatasetResult(RuntimeFileBrowser.DialogResult result)
         {
             if (!result.cancelled)
             {
+                savedPath = result.path;
                 // We'll only allow one dataset at a time in the runtime GUI (for simplicity)
                 DespawnAllDatasets();
 
@@ -121,7 +141,42 @@ namespace UnityVolumeRendering
                     // Spawn the object
                     if (dataset != null)
                     {
-                        VolumeRenderedObject obj = VolumeObjectFactory.CreateObject(dataset);
+
+                        VolumeRenderedObject obj = VolumeObjectFactory.CreateObject(dataset, "new");
+
+
+                        obj.transform.position = new Vector3(numVolumesCreated, 0, 0);
+                        numVolumesCreated++;
+                    }
+                }
+            }
+        }
+        // 
+        private void LoadOnOpenDICOMDatasetResult(RuntimeFileBrowser.DialogResult result)
+        {
+            if (!result.cancelled)
+            {
+                savedPath = result.path;
+                // We'll only allow one dataset at a time in the runtime GUI (for simplicity)
+                DespawnAllDatasets();
+
+                bool recursive = true;
+
+                // Read all files
+                IEnumerable<string> fileCandidates = Directory.EnumerateFiles(result.path, "*.*", recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly)
+                    .Where(p => p.EndsWith(".dcm", StringComparison.InvariantCultureIgnoreCase) || p.EndsWith(".dicom", StringComparison.InvariantCultureIgnoreCase) || p.EndsWith(".dicm", StringComparison.InvariantCultureIgnoreCase));
+
+                // Import the dataset
+                IImageSequenceImporter importer = ImporterFactory.CreateImageSequenceImporter(ImageSequenceFormat.DICOM);
+                IEnumerable<IImageSequenceSeries> seriesList = importer.LoadSeries(fileCandidates);
+                float numVolumesCreated = 0;
+                foreach (IImageSequenceSeries series in seriesList)
+                {
+                    VolumeDataset dataset = importer.ImportSeries(series);
+                    // Spawn the object
+                    if (dataset != null)
+                    {
+                        VolumeRenderedObject obj = VolumeObjectFactory.CreateObject(dataset, "old", result.path);
                         obj.transform.position = new Vector3(numVolumesCreated, 0, 0);
                         numVolumesCreated++;
                     }
@@ -132,10 +187,12 @@ namespace UnityVolumeRendering
         private void DespawnAllDatasets()
         {
             VolumeRenderedObject[] volobjs = GameObject.FindObjectsOfType<VolumeRenderedObject>();
-            foreach(VolumeRenderedObject volobj in volobjs)
+            foreach (VolumeRenderedObject volobj in volobjs)
             {
                 GameObject.Destroy(volobj.gameObject);
             }
         }
+
     }
 }
+

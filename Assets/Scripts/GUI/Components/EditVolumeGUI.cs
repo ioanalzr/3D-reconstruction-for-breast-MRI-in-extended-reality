@@ -15,7 +15,7 @@ namespace UnityVolumeRendering
         private const int WINDOW_WIDTH = 400;
         private const int WINDOW_HEIGHT = 400;
 
-        private int selectedRenderModeIndex = 0;
+        private int selectedRenderModeIndex = 0; 
         private Vector3 rotation;
 
         private static EditVolumeGUI instance;

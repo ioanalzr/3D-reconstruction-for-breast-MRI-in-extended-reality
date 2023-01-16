@@ -21,15 +21,16 @@ Possible Errors at build:
 The Mixed Reality Toolkit might have to be installed and imported to the project again from the Mixed Reality Feature Tool.https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool
 
 The WSAT Test might have to be deleted from Edit>Project Settings>Player.
+The initial parameters of the hologram can be changed in VolumeObjectFactory, meshcontainer.transform.
+
 
 In case the master branch presents additional errors, branch Ioana should have a final functional version.
 
 
 
-
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) 2023 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

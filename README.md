@@ -8,6 +8,7 @@ Unity Editor Version used: 2021.3.16f1. Other versions might create errors.
 
 Volume rendering from 2D MRI scans is based on the opensource Unit Volume Rendering Project- https://github.com/mlavik1/UnityVolumeRendering [Referenced at the end]
 
+There are 3 Rendering Modes, we suggest using the Maximum Intensitty one.
 
 The app is intended to be used on Windows, so that the datasets can be accessed and the 3D Rendering is computed on the computer.  
 At the moment, this is done by using the app in Unity in PlayMode. This is set up as presented here: https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/preview-and-debug-your-app?tabs=openxr . The app starts on the MainMenu Scene, and then opens the Test Scene which integrates the MRTK environment. The RunTime Graphic User Interface can be used from the computer, and the hologram is displayed in Mixed Reality once the object is created. 

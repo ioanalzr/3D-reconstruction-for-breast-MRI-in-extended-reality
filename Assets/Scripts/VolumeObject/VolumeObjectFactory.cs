@@ -47,7 +47,7 @@ namespace UnityVolumeRendering
             else
             {
                 meshContainer.transform.parent = outerObject.transform;
-                meshContainer.transform.localScale = new Vector3(0.7, 0.7, 0.7);
+                meshContainer.transform.localScale = new Vector3(1, 1, 1);
                 meshContainer.transform.localPosition = new Vector3(0, 1, 0);
                 meshContainer.transform.parent = outerObject.transform;
                 outerObject.transform.localRotation = Quaternion.Euler(90.0f, 0.0f, 0.0f);

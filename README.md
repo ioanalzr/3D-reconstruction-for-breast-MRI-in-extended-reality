@@ -4,7 +4,7 @@ Windows Application for building a 3D breast MRI hologram from DICOM files and v
 
 Unity Editor Version used: 2021.3.16f1. Other versions might create errors.
 
-Volume rendering from 2D MRI scans is based on the opensource Unit Volume Rendering Project (https://github.com/mlavik1/UnityVolumeRendering,MIT License, see end of file).
+Volume rendering from 2D MRI scans is based on the opensource Unit Volume Rendering Project (https://github.com/mlavik1/UnityVolumeRendering , MIT License, see end of file).
 
 There are 3 Rendering Modes, we suggest using the Maximum Intensity Projection.
 
